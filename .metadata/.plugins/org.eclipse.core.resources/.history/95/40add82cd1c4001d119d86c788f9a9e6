@@ -46,9 +46,4 @@ public class Category implements java.io.Serializable {
 		this.categoryName = categoryName;
 	}
 
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", categoryName=" + categoryName + "]";
-	}
-
 }

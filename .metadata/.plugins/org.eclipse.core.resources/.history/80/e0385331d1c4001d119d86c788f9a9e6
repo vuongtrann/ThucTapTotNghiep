@@ -90,10 +90,4 @@ public class Book implements java.io.Serializable {
 		this.catId = catId;
 	}
 
-	@Override
-	public String toString() {
-		return "Book [id=" + id + ", bookName=" + bookName + ", description=" + description + ", price=" + price
-				+ ", image=" + image + ", catId=" + catId + "]";
-	}
-
 }

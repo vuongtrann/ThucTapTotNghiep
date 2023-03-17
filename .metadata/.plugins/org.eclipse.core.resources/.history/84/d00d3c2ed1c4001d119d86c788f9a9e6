@@ -79,10 +79,4 @@ public class User implements java.io.Serializable {
 		this.role = role;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", email=" + email + ", password=" + password + ", role="
-				+ role + "]";
-	}
-
 }
