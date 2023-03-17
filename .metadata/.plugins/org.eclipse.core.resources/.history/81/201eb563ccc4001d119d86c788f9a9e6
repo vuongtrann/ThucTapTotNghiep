@@ -1,0 +1,25 @@
+import java.util.List;
+
+import org.hibernate.Session;
+
+import DAO.IMPL.BookDao;
+import MODEL.Book;
+import UTIL.HibernateUtil;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		BookDao bookDao = new BookDao();
+		Book book = new Book();
+		
+		bookDao.updateBook(1, "book1Update", "dsadsadasda", 1231313, "dasdad", 1);
+
+		List<Book> listBooks = bookDao.findAllBooks();
+		for(Book b:listBooks) {
+			System.out.println(b.toString());
+		}
+	}
+
+}
