@@ -43,7 +43,8 @@ public class Test {
 		//categoryDao.updateCategory(2, "cat2update");
 		//categoryDao.deleteCategorykByID(2);
 		
-//		List<Category> listCategories = categoryDao.findAllCategories();
+		List<Category> listCategories = categoryDao.findAllCategories();
+		System.out.println(listCategories);
 //		for(Category c: listCategories) {
 //			System.out.println(c.toString());
 //		}
