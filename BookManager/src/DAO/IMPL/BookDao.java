@@ -1,18 +1,25 @@
 package DAO.IMPL;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
 
 import DAO.IBookDao;
 import MODEL.Book;
+import MODEL.Category;
 
 public class BookDao implements IBookDao {
 
 	@Override
-	public List<Book> findAllBooks() {
+	public ArrayList<Book> findAllBooks() {
 		Session session = sessionFactory.openSession();
-		return session.createQuery("from Book").list();
+		return (ArrayList<Book>) session.createQuery("from Book").list();
+	}
+
+	public Book findBookByID( final int id) {
+		Session session = sessionFactory.openSession();
+		return (Book) session.get(Book.class, id);
 	}
 
 	@Override

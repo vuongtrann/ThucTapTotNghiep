@@ -27,7 +27,8 @@ public class Test {
 		
 		//bookDao.deleteBookByID(2);
 
-//		List<Book> listBooks = bookDao.findAllBooks();
+		List<Book> listBooks = bookDao.findAllBooks();
+		System.out.println(listBooks);
 //		for(Book b:listBooks) {
 //			System.out.println(b.toString());
 //		}
@@ -43,8 +44,12 @@ public class Test {
 		//categoryDao.updateCategory(2, "cat2update");
 		//categoryDao.deleteCategorykByID(2);
 		
-		List<Category> listCategories = categoryDao.findAllCategories();
-		System.out.println(listCategories);
+//		List<Category> listCategories = categoryDao.findAllCategories();
+//		System.out.println(listCategories);
+//		
+//		Category category2 = categoryDao.findCategoryByID(1);
+//		
+//		System.out.println(category2);
 //		for(Category c: listCategories) {
 //			System.out.println(c.toString());
 //		}

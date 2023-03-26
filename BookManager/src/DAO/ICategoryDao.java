@@ -11,6 +11,9 @@ public interface ICategoryDao {
 	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
 	public List<Category> findAllCategories();
+	
+	public Category findCategoryByID(int id);
+
 
 	public void inserCategory(final Category category);
 

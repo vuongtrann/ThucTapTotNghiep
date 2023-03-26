@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import DAO.IMPL.BookDao;
@@ -20,5 +21,11 @@ public class BookService {
 
 		return bookDao.findAllBooks();
 
+	}
+	@GET
+	@Produces({"application/json" })
+	@Path("/{id}")
+	public Book findBookByID(@PathParam("id") int id){
+		return bookDao.findBookByID(id);
 	}
 }

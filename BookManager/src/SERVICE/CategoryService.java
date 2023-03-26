@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
@@ -26,5 +27,11 @@ public class CategoryService {
 		//List<Category> listCategories1 = categoryDao.findAllCategories();
 		return categoryDao.findAllCategories();
 
+	}
+	@GET
+	@Produces({"application/json" })
+	@Path("/{id}")
+	public Category findCategoryByID(@PathParam("id") int id){
+		return categoryDao.findCategoryByID(id);
 	}
 }

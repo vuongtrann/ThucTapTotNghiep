@@ -14,7 +14,11 @@ public class CategoryDao implements ICategoryDao {
 		Session session = sessionFactory.openSession();
 		return session.createQuery("from Category").list();
 	}
-
+	@Override
+	public Category findCategoryByID(final int id){
+		Session session = sessionFactory.openSession();
+		return (Category) session.get(Category.class, id);
+	}
 	@Override
 	public void inserCategory(Category category) {
 		Session session = sessionFactory.openSession();
