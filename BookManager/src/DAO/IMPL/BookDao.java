@@ -3,6 +3,7 @@ package DAO.IMPL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import DAO.IBookDao;
@@ -16,12 +17,25 @@ public class BookDao implements IBookDao {
 		Session session = sessionFactory.openSession();
 		return (ArrayList<Book>) session.createQuery("from Book").list();
 	}
-
+	
+	@Override
 	public Book findBookByID( final int id) {
 		Session session = sessionFactory.openSession();
 		return (Book) session.get(Book.class, id);
 	}
-
+	
+	@Override
+	public List<Book> showAllBookByCatId(int id) {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.flush();
+		Query query = session.createQuery("select b from Book b where b.catId like :catID").setParameter("catID", id);
+		List<Book> result = query.list();
+		session.getTransaction().commit();
+		session.close();
+		return result;
+	}
+	
 	@Override
 	public void insertBook(Book book) {
 		Session session = sessionFactory.openSession();

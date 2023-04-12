@@ -27,7 +27,8 @@ public class Test {
 		
 		//bookDao.deleteBookByID(2);
 
-		List<Book> listBooks = bookDao.findAllBooks();
+		//List<Book> listBooks = bookDao.findAllBooks();
+		List<Book> listBooks = bookDao.showAllBookByCatId(1);
 		System.out.println(listBooks);
 //		for(Book b:listBooks) {
 //			System.out.println(b.toString());

@@ -1,5 +1,6 @@
 package DAO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -13,6 +14,7 @@ public interface IBookDao {
 	
 	public List<Book> findAllBooks();
 	public Book findBookByID(int id);
+	public List<Book> showAllBookByCatId(int id);
 
 	public void insertBook(final Book book);
 	public void deleteBookByID(int id);
